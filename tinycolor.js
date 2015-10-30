@@ -128,6 +128,9 @@ tinycolor.prototype = {
     toRgb: function() {
         return { r: mathRound(this._r), g: mathRound(this._g), b: mathRound(this._b), a: this._a };
     },
+    toValue: function() {
+        return (this._r << 24) | (this._g << 16) | (this._b << 8) | this._a;
+    },
     toRgbString: function() {
         return (this._a == 1) ?
           "rgb("  + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ")" :
